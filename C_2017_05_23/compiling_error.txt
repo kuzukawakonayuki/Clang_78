@@ -1,0 +1,10 @@
+C:\Users\risshisha\Desktop\C_2017_05_23\30_Array_02.cpp: In function 'int main()':
+C:\Users\risshisha\Desktop\C_2017_05_23\30_Array_02.cpp:8:5: error: 'set1' was not declared in this scope
+     set1 = loop1;
+     ^
+C:\Users\risshisha\Desktop\C_2017_05_23\30_Array_02.cpp:9:5: error: 'set2' was not declared in this scope
+     set2 = loop1;
+     ^
+C:\Users\risshisha\Desktop\C_2017_05_23\30_Array_02.cpp:15:5: error: expected ';' before '}' token
+     }
+     ^
