@@ -17,7 +17,6 @@ int main()
                     {0,1,0,1,0,0,0},
                     {1,1,1,1,1,1,1}};
   int roop1,roop2,set,select;
-  int pic2_x,pic2_y;
   select = 0;
   set = 0;
   for (roop1 = 0;roop1 <= 6;roop1++)
@@ -44,38 +43,49 @@ int main()
     //回転選択
     printf("\n\n\nRight90°...0\nLeft90°...1\nTopBottom180°...2\nSide180...3°\ninput\n");
     scanf("%d",&select);
-    pic2_x = 0;
-    pic2_y = 0;
     //右回転90
     if (select == 0)
     {
-      pic2_x = 6;
-      for (roop1 = 0;roop1 <= 6;roop1++)
+      for(roop1 = 0;roop1 <= 6;roop1++)
       {
-        pic2_y = 0;
-        for (roop2 = 0;roop2 <= 6;roop2++)
+        for(roop2 = 0;roop2 <= 6;roop2++)
         {
-          pic2[pic2_x][pic2_y] = pic1[roop1][roop2];
-          pic2_y++;
+          pic2[roop2][6 - roop1] = pic1[roop1][roop2];
         }
-        pic2_x--;
       }
-
     }
     //左回転90
     else if (select == 1)
     {
-
+      for(roop1 = 0;roop1 <= 6;roop1++)
+      {
+        for(roop2 = 0;roop2 <= 6;roop2++)
+        {
+          pic2[6 - roop2][roop1] = pic1[roop1][roop2];
+        }
+      }
     }
     //上下180
     else if (select == 2)
     {
-
+      for(roop1 = 0;roop1 <= 6;roop1++)
+      {
+        for(roop2 = 0;roop2 <= 6;roop2++)
+        {
+          pic2[6 - roop1][roop2] = pic1[roop1][roop2];
+        }
+      }
     }
     //左右180
-    else
+    else if(select == 3)
     {
-
+      for(roop1 = 0;roop1 <= 6;roop1++)
+      {
+        for(roop2 = 0;roop2 <= 6;roop2++)
+        {
+          pic2[roop1][6 - roop2] = pic1[roop1][roop2];
+        }
+      }
     }
 
     //転写

@@ -1,0 +1,46 @@
+#include "stdio.h"
+int main()
+  {
+    int table[10] = {1,2,3,4,5,6,7,8,9,10};
+    int rtable[10] = {1,2,3,4,5,6,7,8,9,10};
+    int input,loop1,loop2,set,select;
+    input = 0;
+    select = 0;
+    printf("input\nshift_Number\n");
+    scanf("%d",&input);
+
+    for(loop1 = 1; loop1 <= input; loop1++)
+      {
+        for(loop2 = 9; loop2 >= 0; loop2--)
+          {
+            set = 0;
+            if(loop2 != 0)
+              {
+                set = loop2 - 1;
+                table[loop2] = table[set];
+              }
+            else if(loop2 == 0)
+              {
+                table[loop2] = 0;
+              }
+          }
+      }
+
+    for(loop1 = 0; loop1 <= 9; loop1++)
+      {
+        rtable[loop1] = table[loop1];
+      }
+
+    select = 10;
+    for(loop1 = 0; loop1 < input; loop1++)
+      {
+        rtable[loop1] = select;
+        select -= 1;
+      }
+
+      for(loop1 = 0; loop1 <= 9; loop1++)
+        {
+          printf("%d",rtable[loop1]);
+        }
+    return 0;
+  }
